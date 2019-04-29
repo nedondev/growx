@@ -1,0 +1,8 @@
+#config
+config/config.json
+
+#dependency directories
+node_modules
+
+#swap file
+*.swp

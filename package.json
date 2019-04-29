@@ -1,0 +1,24 @@
+{
+  "name": "strawberry",
+  "version": "1.0.0",
+  "description": "Smart farm platform backend demo",
+  "main": "app.js",
+  "scripts": {
+    "start" : "npx nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "init"
+  },
+  "author": "nedondev",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mysql": "^2.16.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.11"
+  }
+}

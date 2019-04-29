@@ -1,0 +1,82 @@
+drop database growx;
+create database growx;
+use growx;
+CREATE TABLE user (
+  username VARCHAR(64) PRIMARY KEY,
+  password VARCHAR(64) NOT NULL,
+  created_at DATE NOT NULL,
+  role VARCHAR(10) DEFAULT 'user'
+);
+
+CREATE TABLE farm (
+	farm_id INT PRIMARY KEY,
+	name VARCHAR(64),
+	created_at DATE NOT NULL,
+	usr_id VARCHAR(64),
+	FOREIGN KEY(usr_id) REFERENCES user(username) ON DELETE CASCADE
+);
+
+CREATE TABLE work_on(
+	usr_id VARCHAR(64),
+	farm_id INT,
+	permission VARCHAR(10) NOT NULL,
+	PRIMARY KEY(usr_id, farm_id),
+	FOREIGN KEY(usr_id) REFERENCES user(username) ON DELETE CASCADE,
+	FOREIGN KEY(farm_id) REFERENCES farm(farm_id) ON DELETE CASCADE
+)
+
+CREATE TABLE control_unit (
+	con_id INT PRIMARY KEY,
+	type VARCHAR(64) NOT NULL,
+	setup_date DATE NOT NULL,
+	shelf INT,
+	section INT,
+	floor INT,
+	farm_id INT,
+	FOREIGN KEY(farm_id) REFERENCES farm(farm_id) ON DELETE CASCADE
+);
+
+CREATE TABLE cycle_config (
+	from_time TIMESTAMP PRIMARY KEY,
+	to_time TIMESTAMP,
+	value DECIMAL(5,2) NOT NULL,
+	farm_id INT,
+	FOREIGN KEY(farm_id) REFERENCES farm(farm_id) ON DELETE CASCADE
+);
+
+CREATE TABLE sensor (
+	sen_id INT PRIMARY KEY,
+	type VARCHAR(64) NOT NULL,
+	setup_date DATE NOT NULL,
+	shelf INT,
+	section INT,
+	floor INT,
+	farm_id INT,
+	FOREIGN KEY(farm_id) REFERENCES farm(farm_id) ON DELETE CASCADE
+);
+
+CREATE TABLE senser_log (
+	log_id INT PRIMARY KEY,
+	value DECIMAL(5,2) NOT NULL,
+	time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	sen_id INT,
+	FOREIGN KEY(sen_id) REFERENCES sensor(sen_id) ON DELETE CASCADE
+);
+
+CREATE TABLE camera (
+	cam_id INT PRIMARY KEY,
+	setup_date DATE NOT NULL,
+	shelf INT,
+	section INT,
+	floor INT,
+	farm_id INT,
+	FOREIGN KEY(farm_id) REFERENCES farm(farm_id) ON DELETE CASCADE
+);
+
+CREATE TABLE camera_log (
+	log_id INT PRIMARY KEY,
+	data BLOB NOT NULL,
+	time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	cam_id INT,
+	FOREIGN KEY(cam_id) REFERENCES camera(cam_id) ON DELETE CASCADE
+);
