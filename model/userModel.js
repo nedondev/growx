@@ -50,7 +50,7 @@ User.getAllUser = function(result){
             result(err, null);
         }
         else{
-            console.log('Containers: ',res);
+            console.log('Users: ',res);
             result(null, res);
         }
     });
