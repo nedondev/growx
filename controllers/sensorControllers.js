@@ -6,12 +6,17 @@ var User = require('../model/userModel.js');
 
 exports.list_or_create_by_sensor = function(req, res){
     if(req.body.option === 'list'){
-        Sensor.getSensorByFarmId(req.body.farm_id, function(err, sensor){
-            console.log('sensor listing');
-            if(err) res.send(err);
-            console.log('res', sensor);
-            res.status(200).send({result:sensor})
-        });
+        if(!req.body.farm_id) {
+            res.status(400).send({err:true, message: 'Please provide farm id'});
+        }
+        else{
+            Sensor.getSensorByFarmId(req.body.farm_id, function(err, sensor){
+                console.log('sensor listing');
+                if(err) res.send(err);
+                console.log('res', sensor);
+                res.status(200).send({result:sensor})
+            });
+        }
     }
     else if(req.body.option === 'create'){
         console.log("create");

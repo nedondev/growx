@@ -7,12 +7,17 @@ var Sensor_log = require('../model/sensor_logModel.js');
 
 exports.list_or_create_by_sensor_log = function(req, res){
     if(req.body.option === 'list'){
-        Sensor_log.getSensor_logBySenId(req.body.sen_id, function(err, sensor_log){
-            console.log('sensor_log listing');
-            if(err) res.send(err);
-            console.log('res', sensor_log);
-            res.status(200).send({result:sensor_log})
-        });
+        if(!req.body.sen_id) {
+            res.status(400).send({err:true, message: 'Please provide sen id'});
+        }
+        else{
+            Sensor_log.getSensor_logBySenId(req.body.sen_id, function(err, sensor_log){
+                console.log('sensor_log listing');
+                if(err) res.send(err);
+                console.log('res', sensor_log);
+                res.status(200).send({result:sensor_log})
+            });
+        }
     }
     else if(req.body.option === 'create'){
         console.log("create");
