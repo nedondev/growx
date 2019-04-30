@@ -1,0 +1,973 @@
+{
+	"info": {
+		"_postman_id": "f57ca547-6454-464a-88f0-ebf70b2c8614",
+		"name": "GrowX",
+		"description": "GrowX smart farm platform",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"description": "user control",
+			"item": [
+				{
+					"name": "Listing all user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{server_ip}}/users",
+							"host": [
+								"{{server_ip}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "demo",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "demo",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "user",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server_ip}}/users",
+							"host": [
+								"{{server_ip}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user role",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{server_ip}}/users/demo",
+							"host": [
+								"{{server_ip}}"
+							],
+							"path": [
+								"users",
+								"demo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change password",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "password",
+									"value": "demo1",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server_ip}}/users/demo",
+							"host": [
+								"{{server_ip}}"
+							],
+							"path": [
+								"users",
+								"demo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{server_ip}}/users/demo",
+							"host": [
+								"{{server_ip}}"
+							],
+							"path": [
+								"users",
+								"demo"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Farm",
+			"description": "",
+			"item": [
+				{
+					"name": "Add farm",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "option",
+									"value": "create",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "farm_demo",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "demo",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server_ip}}/farms",
+							"host": [
+								"{{server_ip}}"
+							],
+							"path": [
+								"farms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listing farm by username",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "option",
+									"value": "list",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "demo",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server_ip}}/farms/",
+							"host": [
+								"{{server_ip}}"
+							],
+							"path": [
+								"farms",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get farm",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change farm name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Work_on",
+			"description": "",
+			"item": [
+				{
+					"name": "Listing all work on",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{server_ip}}/work_on",
+							"host": [
+								"{{server_ip}}"
+							],
+							"path": [
+								"work_on"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get work on",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{server_ip}}/work_on/a",
+							"host": [
+								"{{server_ip}}"
+							],
+							"path": [
+								"work_on",
+								"a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create new permission",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "a",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "farm_id",
+									"value": "5",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "permission",
+									"value": "worker",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server_ip}}/work_on",
+							"host": [
+								"{{server_ip}}"
+							],
+							"path": [
+								"work_on"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update permission",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "farm_id",
+									"value": "5",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "permission",
+									"value": "worker",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server_ip}}/work_on/a",
+							"host": [
+								"{{server_ip}}"
+							],
+							"path": [
+								"work_on",
+								"a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sensor",
+			"description": "",
+			"item": [
+				{
+					"name": "Add Sensor",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "type",
+									"value": "light",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "shelf",
+									"value": "1",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "section",
+									"value": "1",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "floor",
+									"value": "1",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "farm_id",
+									"value": "1",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "option",
+									"value": "create",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server_ip}}/sensors",
+							"host": [
+								"{{server_ip}}"
+							],
+							"path": [
+								"sensors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listing Sensor by FarmId",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "farm_id",
+									"value": "1",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "option",
+									"value": "list",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server_ip}}/sensors",
+							"host": [
+								"{{server_ip}}"
+							],
+							"path": [
+								"sensors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Sensor id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{server_ip}}/sensors/1",
+							"host": [
+								"{{server_ip}}"
+							],
+							"path": [
+								"sensors",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "ab0ae7a8-5ad9-4e3d-a6db-611b718fbf9b",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "634b68b1-14df-411a-9a40-38bfd5755817",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Sensor Log",
+			"description": "",
+			"item": [
+				{
+					"name": "Add Sensor_log",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "value",
+									"value": "382",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "sen_id",
+									"value": "2",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "option",
+									"value": "create",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server_ip}}/sensor_logs",
+							"host": [
+								"{{server_ip}}"
+							],
+							"path": [
+								"sensor_logs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listing Sensor_log by Sensor Id",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "sen_id",
+									"value": "2",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "option",
+									"value": "list",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server_ip}}/sensor_logs",
+							"host": [
+								"{{server_ip}}"
+							],
+							"path": [
+								"sensor_logs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Sensor_log by id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{server_ip}}/sensor_logs/1",
+							"host": [
+								"{{server_ip}}"
+							],
+							"path": [
+								"sensor_logs",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "ab0ae7a8-5ad9-4e3d-a6db-611b718fbf9b",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "634b68b1-14df-411a-9a40-38bfd5755817",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Camera",
+			"description": "",
+			"item": [
+				{
+					"name": "Add Camera",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "shelf",
+									"value": "1",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "section",
+									"value": "1",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "floor",
+									"value": "1",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "farm_id",
+									"value": "1",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "option",
+									"value": "create",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server_ip}}/cameras",
+							"host": [
+								"{{server_ip}}"
+							],
+							"path": [
+								"cameras"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listing Camera by FarmId",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "farm_id",
+									"value": "1",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "option",
+									"value": "list",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server_ip}}/cameras",
+							"host": [
+								"{{server_ip}}"
+							],
+							"path": [
+								"cameras"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Camera by id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{server_ip}}/cameras/1",
+							"host": [
+								"{{server_ip}}"
+							],
+							"path": [
+								"cameras",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "ab0ae7a8-5ad9-4e3d-a6db-611b718fbf9b",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "634b68b1-14df-411a-9a40-38bfd5755817",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Camera Log",
+			"description": "",
+			"item": [
+				{
+					"name": "Add Camera_log",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "382",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "cam_id",
+									"value": "2",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "option",
+									"value": "create",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server_ip}}/camera_logs",
+							"host": [
+								"{{server_ip}}"
+							],
+							"path": [
+								"camera_logs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listing Camera_log by Camera Id",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "cam_id",
+									"value": "2",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "option",
+									"value": "list",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server_ip}}/sensor_logs",
+							"host": [
+								"{{server_ip}}"
+							],
+							"path": [
+								"sensor_logs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Camera_log by id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{server_ip}}/cameras/1",
+							"host": [
+								"{{server_ip}}"
+							],
+							"path": [
+								"cameras",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "ab0ae7a8-5ad9-4e3d-a6db-611b718fbf9b",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "634b68b1-14df-411a-9a40-38bfd5755817",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	]
+}
