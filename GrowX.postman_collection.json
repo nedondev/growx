@@ -293,7 +293,14 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": ""
+							"raw": "{{server_ip}}/farms/1",
+							"host": [
+								"{{server_ip}}"
+							],
+							"path": [
+								"farms",
+								"1"
+							]
 						}
 					},
 					"response": []
@@ -301,11 +308,33 @@
 				{
 					"name": "change farm name",
 					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "gomugomu",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
 						"url": {
-							"raw": ""
+							"raw": "{{server_ip}}/farms/1",
+							"host": [
+								"{{server_ip}}"
+							],
+							"path": [
+								"farms",
+								"1"
+							]
 						}
 					},
 					"response": []
