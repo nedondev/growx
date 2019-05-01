@@ -42,7 +42,7 @@ exports.list_or_create_by_usr = function(req, res){
                                 farm_id : farm.insertId,
                                 permission : 'owner'
                             });
-                            Work_on.createWork(new_work_on, function(err, work_on){
+                            Work_on.createWork_on(new_work_on, function(err, work_on){
                                 if(err) res.send(err);
                                 res.status(200).send({message: 'Farm successfully insert'});
                             });

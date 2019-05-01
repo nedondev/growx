@@ -2,7 +2,7 @@
 var sql = require('../db.js');
 
 var Work_on = function(work_on){
-    this.usr_id= work_on.username;
+    this.usr_id= work_on.usr_id;
     this.farm_id= work_on.farm_id;
     this.permission= work_on.permission;
 };
