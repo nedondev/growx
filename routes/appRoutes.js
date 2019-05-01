@@ -7,6 +7,7 @@ module.exports = function(app){
     var sensor_log = require('../controllers/sensor_logControllers');
     var camera = require('../controllers/cameraControllers');
     var camera_log = require('../controllers/camera_logControllers');
+    var cycle = require('../controllers/cycleControllers');
     
     app.get('/', (req,res) => res.status(200).send({mesage:'GrowX API'}));
     app.route('/users')
@@ -48,4 +49,8 @@ module.exports = function(app){
     app.route("/camera_logs/:camera_log_id")
         .get(camera_log.get_a_camera_log)
         .delete(camera_log.delete_a_camera_log)
+    app.route("/cycle_configs")
+        .post(cycle.list_or_create_by_cycle)
+        .put(cycle.updateValue)
+        .delete(cycle.delete_a_cycle)
 };

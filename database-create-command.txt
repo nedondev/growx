@@ -42,9 +42,10 @@ CREATE TABLE cycle_config (
     type VARCHAR(64) NOT NULL,
 	value DECIMAL(5,2) NOT NULL,
 	farm_id INT,
-    PRIMARY KEY(from_time, type),
+    PRIMARY KEY(from_time, type, farm_id),
 	FOREIGN KEY(farm_id) REFERENCES farm(farm_id) ON DELETE CASCADE
 );
+alter table cycle_config change from_time from_time timestamp not null default current_timestamp;
 
 CREATE TABLE sensor (
 	sen_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,

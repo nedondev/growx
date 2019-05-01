@@ -968,6 +968,261 @@
 					}
 				}
 			]
+		},
+		{
+			"name": "Cycle Config",
+			"description": "",
+			"item": [
+				{
+					"name": "Add cycle",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "from_time",
+									"value": "2008-01-01 12:00:00",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "to_time",
+									"value": "2008-01-04 01:00:00",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "light",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "value",
+									"value": "456.32",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "farm_id",
+									"value": "1",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "option",
+									"value": "create",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server_ip}}/cycle_configs",
+							"host": [
+								"{{server_ip}}"
+							],
+							"path": [
+								"cycle_configs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listing cycle by farm_id",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "farm_id",
+									"value": "1",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "option",
+									"value": "list",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server_ip}}/cycle_configs",
+							"host": [
+								"{{server_ip}}"
+							],
+							"path": [
+								"cycle_configs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a Cycle",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "from_time",
+									"value": "2008-01-01 00:00:01",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "light",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "farm_id",
+									"value": "1",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "option",
+									"value": "getone",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server_ip}}/cycle_configs",
+							"host": [
+								"{{server_ip}}"
+							],
+							"path": [
+								"cycle_configs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update value",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "from_time",
+									"value": "2008-01-01 12:00:00",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "light",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "value",
+									"value": "456.32",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "farm_id",
+									"value": "1",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server_ip}}/cycle_configs",
+							"host": [
+								"{{server_ip}}"
+							],
+							"path": [
+								"cycle_configs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Cycle",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "from_time",
+									"value": "2008-01-01 00:00:01",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "light",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "farm_id",
+									"value": "1",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server_ip}}/cycle_configs",
+							"host": [
+								"{{server_ip}}"
+							],
+							"path": [
+								"cycle_configs"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }

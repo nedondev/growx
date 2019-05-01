@@ -1,4 +1,4 @@
-'user stricta';
+'user strict';
 var sql = require('../db.js');
 
 var Camera = function(camera){
