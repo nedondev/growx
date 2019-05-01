@@ -58,8 +58,8 @@ Cycle.preCreateCycle = function(newCycle, result){
 }
 
 Cycle.getCycleByFarmId = function(cycle, result){
-    if(cycle.value){
-        sql.query("SELECT * FROM cycle_config WHERE farm_id = ?", cycle.farm_id, function(err, res){
+    if(cycle.type){
+        sql.query("SELECT * FROM cycle_config WHERE farm_id = ? and type = ?", [cycle.farm_id, cycle.type], function(err, res){
             if(err){
                 console.log("error ", err);
                 result(err, null);
