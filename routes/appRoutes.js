@@ -8,6 +8,8 @@ module.exports = function(app){
     var camera = require('../controllers/cameraControllers');
     var camera_log = require('../controllers/camera_logControllers');
     var cycle = require('../controllers/cycleControllers');
+
+    var login = require('../controllers/loginControllers');
     
     app.get('/', (req,res) => res.status(200).send({mesage:'GrowX API'}));
     app.route('/users')
@@ -53,4 +55,6 @@ module.exports = function(app){
         .post(cycle.list_or_create_by_cycle)
         .put(cycle.updateValue)
         .delete(cycle.delete_a_cycle)
+    app.route("/login")
+        .post(login.login)
 };

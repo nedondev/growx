@@ -7,6 +7,57 @@
 	},
 	"item": [
 		{
+			"name": "Login",
+			"description": "",
+			"item": [
+				{
+					"name": "Auth user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "demo",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "demo",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "user",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server_ip}}/users",
+							"host": [
+								"{{server_ip}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "User",
 			"description": "user control",
 			"item": [
@@ -1038,6 +1089,45 @@
 				},
 				{
 					"name": "Listing cycle by farm_id",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "farm_id",
+									"value": "1",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "option",
+									"value": "list",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server_ip}}/cycle_configs",
+							"host": [
+								"{{server_ip}}"
+							],
+							"path": [
+								"cycle_configs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listing cycle by farm_id by type",
 					"request": {
 						"method": "POST",
 						"header": [

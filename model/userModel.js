@@ -31,6 +31,18 @@ User.getUserRoleByUsername = function(username, result){
     
     });
 };
+User.getUserByAuth = function(user, result){
+    sql.query("SELECT username, role FROM user WHERE username = ? and password = ?", [user.username, user.password], function(err, res){
+        if(err){
+            console.log("error ", err);
+            result(err, null);
+        }
+        else{
+            result(null, res);
+        }
+    
+    });
+};
 User.getUserByUsername = function(username, result){
     sql.query("SELECT * FROM user WHERE username = ?", username, function(err, res){
         if(err){
