@@ -20,7 +20,7 @@ User.createUser = function(newUser, result){
     });
 };
 User.getUserRoleByUsername = function(username, result){
-    sql.query("SELECT role FROM user WHERE username = ?", username, function(err, res){
+    sql.query("SELECT username,role FROM user WHERE username = ?", username, function(err, res){
         if(err){
             console.log("error ", err);
             result(err, null);
