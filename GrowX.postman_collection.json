@@ -31,25 +31,19 @@
 								},
 								{
 									"key": "password",
-									"value": "demo",
-									"description": "",
-									"type": "text"
-								},
-								{
-									"key": "role",
-									"value": "user",
+									"value": "demo1",
 									"description": "",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "{{server_ip}}/users",
+							"raw": "{{server_ip}}/login",
 							"host": [
 								"{{server_ip}}"
 							],
 							"path": [
-								"users"
+								"login"
 							]
 						}
 					},
@@ -1142,6 +1136,12 @@
 								{
 									"key": "farm_id",
 									"value": "1",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "light",
 									"description": "",
 									"type": "text"
 								},

@@ -5,7 +5,8 @@ var express = require('express'),
 var cors = require('cors')
 var sql_connect = require('./db.js');
 
-var cors = require('cors')
+var cors = require('cors');
+app.use(cors());
 app.listen(port);
 
 console.log('GrowX RESTful API started on: ' + port );
