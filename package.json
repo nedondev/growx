@@ -4,7 +4,7 @@
   "description": "Smart farm platform backend demo",
   "main": "app.js",
   "scripts": {
-    "start" : "npx nodemon server.js",
+    "start": "npx nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,6 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
     "express": "^4.16.4",
     "mysql": "^2.16.0"
   },
